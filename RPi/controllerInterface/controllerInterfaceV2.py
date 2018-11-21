@@ -206,7 +206,7 @@ class PS4Controller(object):
                         action = "let go"
                     elif event.button == 12 and self.button_data[event.button] == False :
                         button = "Right Joystick button"
-                        action = "let go
+                        action = "let go"
 
                 elif event.type == pygame.JOYHATMOTION:
                     self.hat_data[event.hat] = event.value
