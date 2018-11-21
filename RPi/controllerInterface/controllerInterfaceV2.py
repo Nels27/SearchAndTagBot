@@ -36,10 +36,6 @@ class PS4Controller(object):
         self.controller = pygame.joystick.Joystick(0)
         self.controller.init()
 
-    #Added methods for the axis Movement and button interaction. If they work then debugging is easier/
-
-
-
     def listen(self):
         """Listen for events to happen"""
 
@@ -48,7 +44,6 @@ class PS4Controller(object):
 
         if not self.axis_data:
             self.axis_data = {}
-            self.axis_dataKeyCommands ={0: 'Left Joystick (L/R)', 1: 'Left Joystick (U/D)', 2: 'L2 (H/R)', 3: 'Right Joystick (L/R)', 4: 'Right Joystick (U/D)', 5: 'R2 (H/R)'}
             #Left Joystick L(0: -1.0) R(0: 1.0) U(1: -1.0) D(1: 1.0)
             #L2hold - 2:(-1.0 to 1.0)
             #Right Joystick L(3: -1.0) R(3: 1.0) U(4: -1.0) D(4: 1.0)
@@ -58,7 +53,7 @@ class PS4Controller(object):
             self.button_data = {}
             for i in range(self.controller.get_numbuttons()):
                 self.button_data[i] = False
-                
+
                 #Button Mapping
                 #X - 0
                 #O - 1
@@ -73,7 +68,6 @@ class PS4Controller(object):
                 #PS4 Home Btn - 10
                 #Left Joystick Click - 11
                 #Right Joystick Click - 12
-
 
         if not self.hat_data:
             self.hat_data = {}
@@ -104,10 +98,10 @@ class PS4Controller(object):
                         action = "moved up"
                     elif event.axis == 2 and self.axis_data[event.axis] < 0:
                         button = "L2"
-                        action = "pressed down"
+                        action = "let go"
                     elif event.axis == 2 and self.axis_data[event.axis] > 0:
                         button = "L2"
-                        action = "let go"
+                        action = "pressed down"
                     elif event.axis == 3 and self.axis_data[event.axis] < 0:
                         button = "Right Joystick"
                         action = "moved left"
@@ -122,10 +116,10 @@ class PS4Controller(object):
                         action = "moved up"
                     elif event.axis == 5 and self.axis_data[event.axis] < 0:
                         button = "R2"
-                        action = "pressed down"
+                        action = "let go"
                     elif event.axis == 5 and self.axis_data[event.axis] > 0:
                         button = "R2"
-                        action = "let go"
+                        action = "pressed down"
 
                 elif event.type == pygame.JOYBUTTONDOWN:
                     self.button_data[event.button] = True
@@ -212,8 +206,7 @@ class PS4Controller(object):
                         action = "let go"
                     elif event.button == 12 and self.button_data[event.button] == False :
                         button = "Right Joystick button"
-                        action = "let go"
-
+                        action = "let go
 
                 elif event.type == pygame.JOYHATMOTION:
                     self.hat_data[event.hat] = event.value
