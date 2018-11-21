@@ -89,149 +89,154 @@ class PS4Controller(object):
                 if event.type == pygame.JOYAXISMOTION:
                     self.axis_data[event.axis] = round(event.value,2)
                     #Change action to whatever you want to happen possibly
-                    if self.axis_data[0] > 0:
-                        button = "Left Joystick"
-                        action = "moved left"
-                    elif self.axis_data[0] < 0:
-                        button = "Left Joystick"
-                        action = "moved right"
-                    elif self.axis_data[1] > 0:
-                        button = "Left Joystick"
-                        action = "moved up"
-                    elif self.axis_data[1] < 0:
-                        button = "Left Joystick"
-                        action = "moved down"
-                    elif self.axis_data[2] < 0:
-                        button = "L2"
-                        action = "pressed down"
-                    elif self.axis_data[2] > 0:
-                        button = "L2"
-                        action = "let go"
-                    elif self.axis_data[3] < 0:
-                        button = "Right Joystick"
-                        action = "moved left"
-                    elif self.axis_data[3] > 0:
-                        button = "Right Joystick"
-                        action = "moved right"
-                    elif self.axis_data[4] > 0:
-                        button = "Right Joystick"
-                        action = "moved up"
-                    elif self.axis_data[4] < 0:
-                        button = "Right Joystick"
-                        action = "moved down"
-                    elif self.axis_data[5] < 0:
-                        button = "R2"
-                        action = "pressed down"
-                    elif self.axis_data[5] > 0:
-                        button = "R2"
-                        action = "let go"
+
 
                 elif event.type == pygame.JOYBUTTONDOWN:
                     self.button_data[event.button] = True
                     #Placed the print command inside the if else so that the event member was defined
                     #pprint.pprint(self.button_dataKeyCommandsPress[int(event.button)])
-                    if self.button_data[0] == True :
-                        button = "X button"
-                        action = "pressed"
-                    elif self.button_data[1] == True :
-                        button = "O button"
-                        action = "pressed"
-                    elif self.button_data[2] == True :
-                        button = "Triangle button"
-                        action = "pressed"
-                    elif self.button_data[3] == True :
-                        button = "Square button"
-                        action = "pressed"
-                    elif self.button_data[4] == True :
-                        button = "L1 button"
-                        action = "pressed"
-                    elif self.button_data[5] == True :
-                        button = "R1 button"
-                        action = "pressed"
-                    elif self.button_data[6] == True :
-                        button = "L2 button"
-                        action = "pressed"
-                    elif self.button_data[7] == True :
-                        button = "R2 button"
-                        action = "pressed"
-                    elif self.button_data[8] == True :
-                        button = "Share button"
-                        action = "pressed"
-                    elif self.button_data[9] == True :
-                        button = "Options button"
-                        action = "pressed"
-                    elif self.button_data[10] == True :
-                        button = "PS4 Home button"
-                        action = "pressed"
-                    elif self.button_data[11] == True :
-                        button = "Left Joystick button"
-                        action = "pressed"
-                    elif self.button_data[12] == True :
-                        button = "Right Joystick button"
-                        action = "pressed"
+
 
                 elif event.type == pygame.JOYBUTTONUP:
                     self.button_data[event.button] = False
                     #Placed the print command inside the if else so that the event member was defined
                     #pprint.pprint(self.button_dataKeyCommandsRelease[int(event.button)])
-                    if self.button_data[0] == False :
-                        button = "X button"
-                        action = "released"
-                    elif self.button_data[1] == False :
-                        button = "O button"
-                        action = "released"
-                    elif self.button_data[2] == False :
-                        button = "Triangle button"
-                        action = "released"
-                    elif self.button_data[3] == False :
-                        button = "Square button"
-                        action = "released"
-                    elif self.button_data[4] == False :
-                        button = "L1 button"
-                        action = "released"
-                    elif self.button_data[5] == False :
-                        button = "R1 button"
-                        action = "released"
-                    elif self.button_data[6] == False :
-                        button = "L2 button"
-                        action = "released"
-                    elif self.button_data[7] == False :
-                        button = "R2 button"
-                        action = "released"
-                    elif self.button_data[8] == False :
-                        button = "Share button"
-                        action = "released"
-                    elif self.button_data[9] == False :
-                        button = "Options button"
-                        action = "released"
-                    elif self.button_data[10] == False :
-                        button = "PS4 Home button"
-                        action = "released"
-                    elif self.button_data[11] == False :
-                        button = "Left Joystick button"
-                        action = "released"
-                    elif self.button_data[12] == False :
-                        button = "Right Joystick button"
-                        action = "released"
 
 
                 elif event.type == pygame.JOYHATMOTION:
                     self.hat_data[event.hat] = event.value
                     #Placed the print command inside the if else so that the event member was defined
                     #pprint.pprint(self.hat_dataKeyCommands[int(event.hat)])
-                    if self.hat_data[0] < 0:
-                        button = "Down Button"
-                        action = "was pressed"
-                    elif self.hat_data[0] > 0:
-                        button = "Up Button"
-                        action = "was pressed"
-                    if self.hat_data[1] < 0:
-                        button = "Right Button"
-                        action = "was pressed"
-                    elif self.hat_data[1] > 0:
-                        button = "Left Button"
-                        action = "was pressed"
 
+
+
+                if self.axis_data[0] > 0:
+                    button = "Left Joystick"
+                    action = "moved left"
+                elif self.axis_data[0] < 0:
+                    button = "Left Joystick"
+                    action = "moved right"
+                elif self.axis_data[1] > 0:
+                    button = "Left Joystick"
+                    action = "moved up"
+                elif self.axis_data[1] < 0:
+                    button = "Left Joystick"
+                    action = "moved down"
+                elif self.axis_data[2] < 0:
+                    button = "L2"
+                    action = "pressed down"
+                elif self.axis_data[2] > 0:
+                    button = "L2"
+                    action = "let go"
+                elif self.axis_data[3] < 0:
+                    button = "Right Joystick"
+                    action = "moved left"
+                elif self.axis_data[3] > 0:
+                    button = "Right Joystick"
+                    action = "moved right"
+                elif self.axis_data[4] > 0:
+                    button = "Right Joystick"
+                    action = "moved up"
+                elif self.axis_data[4] < 0:
+                    button = "Right Joystick"
+                    action = "moved down"
+                elif self.axis_data[5] < 0:
+                    button = "R2"
+                    action = "pressed down"
+                elif self.axis_data[5] > 0:
+                    button = "R2"
+                    action = "let go"
+                elif self.button_data[0] == True :
+                    button = "X button"
+                    action = "pressed"
+                elif self.button_data[1] == True :
+                    button = "O button"
+                    action = "pressed"
+                elif self.button_data[2] == True :
+                    button = "Triangle button"
+                    action = "pressed"
+                elif self.button_data[3] == True :
+                    button = "Square button"
+                    action = "pressed"
+                elif self.button_data[4] == True :
+                    button = "L1 button"
+                    action = "pressed"
+                elif self.button_data[5] == True :
+                    button = "R1 button"
+                    action = "pressed"
+                elif self.button_data[6] == True :
+                    button = "L2 button"
+                    action = "pressed"
+                elif self.button_data[7] == True :
+                    button = "R2 button"
+                    action = "pressed"
+                elif self.button_data[8] == True :
+                    button = "Share button"
+                    action = "pressed"
+                elif self.button_data[9] == True :
+                    button = "Options button"
+                    action = "pressed"
+                elif self.button_data[10] == True :
+                    button = "PS4 Home button"
+                    action = "pressed"
+                elif self.button_data[11] == True :
+                    button = "Left Joystick button"
+                    action = "pressed"
+                elif self.button_data[12] == True :
+                    button = "Right Joystick button"
+                    action = "pressed"
+                elif self.button_data[0] == False :
+                    button = "X button"
+                    action = "released"
+                elif self.button_data[1] == False :
+                    button = "O button"
+                    action = "released"
+                elif self.button_data[2] == False :
+                    button = "Triangle button"
+                    action = "released"
+                elif self.button_data[3] == False :
+                    button = "Square button"
+                    action = "released"
+                elif self.button_data[4] == False :
+                    button = "L1 button"
+                    action = "released"
+                elif self.button_data[5] == False :
+                    button = "R1 button"
+                    action = "released"
+                elif self.button_data[6] == False :
+                    button = "L2 button"
+                    action = "released"
+                elif self.button_data[7] == False :
+                    button = "R2 button"
+                    action = "released"
+                elif self.button_data[8] == False :
+                    button = "Share button"
+                    action = "released"
+                elif self.button_data[9] == False :
+                    button = "Options button"
+                    action = "released"
+                elif self.button_data[10] == False :
+                    button = "PS4 Home button"
+                    action = "released"
+                elif self.button_data[11] == False :
+                    button = "Left Joystick button"
+                    action = "released"
+                elif self.button_data[12] == False :
+                    button = "Right Joystick button"
+                    action = "released"
+                elif self.hat_data[0] < 0:
+                    button = "Down Button"
+                    action = "was pressed"
+                elif self.hat_data[0] > 0:
+                    button = "Up Button"
+                    action = "was pressed"
+                if self.hat_data[1] < 0:
+                    button = "Right Button"
+                    action = "was pressed"
+                elif self.hat_data[1] > 0:
+                    button = "Left Button"
+                    action = "was pressed"
+                    
                 pprint.pprint("%s was %s."%(button,action))
 
                 #Happens exteremely fast. So you may have to turn off the clear function to view it.
