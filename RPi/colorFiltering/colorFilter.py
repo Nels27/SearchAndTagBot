@@ -13,7 +13,7 @@ while(True):
 
 
     #Denoting upper and lower Blue
-    lower_blue = np.array([100,55,80])
+    lower_blue = np.array([100,55,120])
     upper_blue = np.array([130,255,255])
 
     #Denoting upper and lower Red
