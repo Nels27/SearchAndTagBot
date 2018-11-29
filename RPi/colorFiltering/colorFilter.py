@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-import cv_bridge
+#import cv_bridge
 
 cap = cv2.VideoCapture(0)
 
