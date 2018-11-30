@@ -211,6 +211,7 @@ class PS4Controller(object):
                         action = "was pressed"
 
                 #pprint.pprint("%s was %s."%(button,action))
+                controllerAction = button + action
                 ser.write(button+action)
                 read_val = ser.read_until(button+action,28)
                 print read_val
