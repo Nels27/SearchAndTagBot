@@ -212,8 +212,8 @@ class PS4Controller(object):
 
                 #pprint.pprint("%s was %s."%(button,action))
                 controllerAction = button + action
-                ser.write(button+action)
-                read_val = ser.read_until(button+action,28)
+                ser.write(controllerAction)
+                read_val = ser.read_until(controllerAction,40)
                 print read_val
 
                 #Happens exteremely fast. So you may have to turn off the clear function to view it.
