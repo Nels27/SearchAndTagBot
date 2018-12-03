@@ -72,13 +72,65 @@ void dev_recv()
 
             }
 
-            elseif (temp == "Left ystick moved left") {
+            elseif (temp == "Left Joystick moved left") {
 
             }
 
             elseif (temp == "Left Joystick moved right"){
 
             }
+
+            elseif (temp == "Right Joystick moved up") {
+
+            }
+
+            elseif (temp == "Right Joystick moved down"){
+
+            }
+
+            elseif (temp == "Right Joystick moved left") {
+
+            }
+
+            elseif (temp == "Right Joystick moved right"){
+
+            }
+
+            elseif (temp == "X button pressed") {
+
+            }
+
+            elseif (temp == "X button let go"){
+
+            }
+
+            elseif (temp == "O button pressed") {
+
+            }
+
+            elseif (temp == "O button let go"){
+
+            }
+
+            elseif (temp == "Square button pressed") {
+
+            }
+
+            elseif (temp == "Square button let go"){
+
+            }
+
+            elseif (temp == "Triangle button pressed") {
+
+            }
+
+            elseif (temp == "Triangle button let go"){
+
+            }
+
+
+
+
 
 
     }
