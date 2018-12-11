@@ -1,0 +1,102 @@
+private void X_Click(object sender, EventArgs e)
+        {
+            //(0,0) is the upper left hand corner and boxes will be anchored by corner of box, not center
+            int x_start=300;
+            int y_start=300;
+
+            //get the time and heading from pi
+            double time = 5; //seconds
+            double heading = 80; //degrees
+            double trig_h = 90 - heading;
+            if (trig_h < 0)
+                trig_h = 360 + trig_h;
+            //constant speed calculated (inch/second)
+            double speed = 4.470721;
+            //scaling of map (600,600)px to (8x8)ft
+            double scale = 75/12;
+
+            //calculations
+            double distance = time*speed;
+
+            double doub_x = Math.Abs(distance * Math.Cos(trig_h) * scale);
+            label1.Text = Convert.ToString(doub_x);
+            double doub_y = Math.Abs(distance * Math.Sin(trig_h) * scale);
+            label2.Text = Convert.ToString(doub_y);
+            int new_x = Convert.ToInt32(doub_x);
+            int new_y = Convert.ToInt32(doub_y);
+            int h = Convert.ToInt32(heading);
+
+            
+
+            //create new label and place it on the map
+            Label drop = new Label();
+            drop.Width = 14;
+            drop.ForeColor = Color.Red;
+            drop.BackColor = Color.White;
+            drop.Text = "X";
+ 
+            if (counter == 0)
+            {
+                if (h < 90 & h > 0)
+                {
+                    drop.Location = new Point(x: x_start + new_x, y: y_start - new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+                else if (h > 90 & h < 180)
+                {
+                    drop.Location = new Point(x: x_start + new_x, y: y_start + new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+                else if (h < 270 & h > 180)
+                {
+                    drop.Location = new Point(x: x_start - new_x, y: y_start + new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+                else if (h < 360 & h > 270)
+                {
+                    drop.Location = new Point(x: x_start - new_x, y: y_start - new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+            }
+            else
+            {
+                if (h < 90 & h > 0)
+                {
+                    drop.Location = new Point(x: x_start + new_x, y: y_start - new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+                else if (h > 90 & h < 180)
+                {
+                    drop.Location = new Point(x: x_start + new_x, y: y_start + new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+                else if (h < 270 & h > 180)
+                {
+                    drop.Location = new Point(x: x_start - new_x, y: y_start + new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+                else if (h < 360 & h > 270)
+                {
+                    drop.Location = new Point(x: x_start - new_x, y: y_start - new_y);
+                    x1 = x_start + new_x;
+                    y1 = y_start - new_y;
+                    counter++;
+                }
+            }
+            
+            mapImage.Controls.Add(drop);
+        }
